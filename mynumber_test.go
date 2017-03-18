@@ -35,6 +35,12 @@ func TestValidate(t *testing.T) {
 		{"515068736910", false}, // 9
 		{"618587094571", false}, // 10
 		{"517850989502", false}, // 11
+		// Abnormal Input Patterns
+		{"abcdefghijkl", false}, // alphabet, length=12
+		{"12345678", false}, // number, length!=12
+		{"abcdefgh", false}, // alphabet, length!=12
+		{"12a34b56d78e", false}, // alphabet and number
+		{"１２３４５６７８９０１１", false}, // full-width digits
 	}
 
 	for _, c := range candidates {
