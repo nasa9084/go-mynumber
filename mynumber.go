@@ -3,12 +3,9 @@ package mynumber
 import (
 	"bytes"
 	"math/rand"
-	"regexp"
 	"strconv"
 	"time"
 )
-
-var numRegexp = regexp.MustCompile(`^[[:digit:]]{12}$`)
 
 func init() {
 	rand.Seed(time.Now().Unix())
@@ -16,7 +13,7 @@ func init() {
 
 // Validate mynumber
 func Validate(number string) bool {
-	if !numRegexp.MatchString(number) {
+	if _, err := strconv.Atoi(number); err != nil || len(number) != 12 {
 		return false
 	}
 	sum := 0
