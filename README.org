@@ -1,0 +1,4 @@
+* go-mynumber
+[[https://godoc.org/github.com/nasa9084/go-mynumber?status.svg]]
+
+validator and dummy generator of mynumber
