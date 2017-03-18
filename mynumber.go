@@ -31,7 +31,7 @@ func Validate(number string) bool {
 		}
 		n := 11 - i
 		var qn int
-		if 1 <= n && n <= 6 {
+		if n <= 6 { // always 1 <= n
 			qn = n + 1
 		} else {
 			qn = n - 5
@@ -55,7 +55,7 @@ func Generate() string {
 		pn := rand.Intn(10)
 		buf.WriteString(strconv.Itoa(pn))
 		var qn int
-		if 1 <= n && n <= 6 {
+		if n <= 6 { // always 1 <= n
 			qn = n + 1
 		} else {
 			qn = n - 5
