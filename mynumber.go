@@ -39,10 +39,11 @@ func Validate(number string) bool {
 		sum += (pn * qn)
 	}
 	var result int
-	if sum%11 <= 1 {
+	sum %= 11
+	if sum <= 1 {
 		result = 0
 	} else {
-		result = 11 - (sum % 11)
+		result = 11 - sum
 	}
 	return result == checkDigit
 }
