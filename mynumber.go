@@ -20,12 +20,11 @@ func Validate(number string) bool {
 		return false
 	}
 	sum := 0
-	main := number[:11]
 	checkDigit, err := strconv.Atoi(string(number[11]))
 	if err != nil {
 		panic(err)
 	}
-	for i, d := range main {
+	for i, d := range number[:11] {
 		pn, err := strconv.Atoi(string(d))
 		if err != nil {
 			panic(err)
